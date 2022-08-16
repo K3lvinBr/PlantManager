@@ -18,6 +18,14 @@ export default function Time() {
     const [seg, setSeg] = useState<string>(null)
 
     useEffect(() => {
+        if (newPlant.time === '') {
+            setHoras(null)
+            setMin(null)
+            setSeg(null)
+        }
+    }, [newPlant])
+
+    useEffect(() => {
         if ((horas && min && seg)) {
             setNewPlant({ ...newPlant, time: `${horas}:${min}:${seg}` })
         }
@@ -32,7 +40,7 @@ export default function Time() {
                         style={styles.input}
                         keyboardType='numeric'
                         maxLength={2}
-                        
+
                         value={horas}
                         onChangeText={setHoras}
                     />

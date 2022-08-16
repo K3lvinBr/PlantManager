@@ -14,16 +14,27 @@ import { PlantContext, DefaultNewPlant } from '../context/PlantContext';
 // styles
 import colors from '../styles/colors'
 
-export default function New() {
+export default function New({ navigation }) {
   const [newPlant, setNewPlant] = useState(DefaultNewPlant.newPlant)
 
   const handleCreatePlant = () => {
-    axios.post('http://192.168.0.197:3000/register', {
-      place: newPlant.place,
-      name: newPlant.name,
-      image: newPlant.image,
-      time: newPlant.time,
-    })
+    if (newPlant.place && newPlant.name && newPlant.image != null && newPlant.time) {
+      axios.post('http://192.168.0.197:3000/register', {
+        place: newPlant.place,
+        name: newPlant.name,
+        image: newPlant.image,
+        time: newPlant.time,
+      }).then(() => {
+        setNewPlant({
+          id: null,
+          place: '',
+          name: '',
+          image: null,
+          time: ''
+        })
+        navigation.navigate('home')
+      })
+    }
   }
 
   return (
@@ -33,7 +44,7 @@ export default function New() {
         <ChoosePlant />
         <Time />
         <View style={{ paddingHorizontal: 30 }}>
-          <Button onPress={() => {handleCreatePlant()}} styleButton={{ height: 56 }} textButton='Cadastrar planta' />
+          <Button onPress={() => { handleCreatePlant() }} styleButton={{ height: 56 }} textButton='Cadastrar planta' />
         </View>
       </PlantContext.Provider>
     </View >
