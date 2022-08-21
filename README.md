@@ -1,4 +1,4 @@
-# PlantManager
+# :four_leaf_clover: PlantManager :four_leaf_clover:
 
 App para ajudar a regar suas plantas no tempo certo.
 <p align="center">
@@ -14,6 +14,8 @@ App para ajudar a regar suas plantas no tempo certo. Que foi utilizado React Nat
 ## :art: Layout
 <div align="center">
   <img height="490" src="plant_manager/src/assets/to_Readme/plant_home.jpg" />
+  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+  <img height="490" src="plant_manager/src/assets/to_Readme/plant_add.jpg" />
 </div>
 
 ## :hammer_and_wrench: Tecnologias
