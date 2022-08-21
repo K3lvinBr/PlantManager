@@ -47,9 +47,10 @@ cd plant_manager
 $ expo start
 
 cd services
-
+$ node index.js
 
 # Baixe o Expo Go no seu dispositivo para Android ou IOS
+# O servidor iniciará na porta:3000 - acesse http://localhost:3000
 ```
 
 ---
