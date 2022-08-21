@@ -13,7 +13,7 @@ App para ajudar a regar suas plantas no tempo certo. Que foi utilizado React Nat
 
 ## :art: Layout
 <div align="center">
-  <img height="490" src="assets/to_Readme/app_gif.gif" />
+  <img height="490" src="plant_manager/src/assets/to_Readme/plant_home.jpg" />
 </div>
 
 ## :hammer_and_wrench: Tecnologias
