@@ -1,6 +1,11 @@
 # :four_leaf_clover: PlantManager :four_leaf_clover:
 
 App para ajudar a regar suas plantas no tempo certo.
+
+<div align="center">
+  <img width="300px" src="plant_manager/src/assets/logo.png" />
+</div>
+
 <p align="center">
   <a href="#page_facing_up-projeto">Projeto</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#art-layout">Layout</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
