@@ -25,7 +25,7 @@ export default function PlantList({ data }: Props) {
             <FlatList
                 data={data}
                 renderItem={({ item }) => <PlantCard data={item} />}
-                keyExtractor={({ id }) => id.toString()}
+                keyExtractor={({ id }) => id}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{ paddingBottom: 300 }}
                 ListEmptyComponent={() => (

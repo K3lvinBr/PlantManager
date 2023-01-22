@@ -17,7 +17,7 @@ import { DataProps } from '../@types/PlantType'
 export default function PlantCard({ data }: DataProps) {
     return (
         <View style={styles.backgroundCard}>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}> 
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <Image style={styles.plantImage} source={images[data.image]} />
                 <View>
                     <HeadingText textStyles={styles.cardText}>{data.name}</HeadingText>

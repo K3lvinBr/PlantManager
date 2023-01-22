@@ -1,6 +1,7 @@
 import { View } from 'react-native'
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { useIsFocused } from '@react-navigation/native'
 
 // components
 import Water from '../components/Water'
@@ -13,12 +14,24 @@ import colors from '../styles/colors'
 import { PlantType } from '../@types/PlantType'
 
 export default function Home() {
-  const [data, setData] = useState<PlantType[]>([])
+  const isFocused = useIsFocused();
+  const [data, setData] = useState<Array<PlantType>>([])
 
   useEffect(() => {
-    axios.get('http://192.168.0.197:3000/plants').then(res =>
-      setData(res.data))
-  }, [])
+    isFocused && getData()
+  }, [isFocused])
+
+  const getData = async () => {
+    try {
+      const jsonValue  = await AsyncStorage.getItem('@storage_Key')
+      if(jsonValue !== null) {
+        setData(JSON.parse(jsonValue))
+      }
+    } catch(e) {
+      console.log('error ao ler dados')
+    }
+  }
+
   return (
     <View style={{
       flex: 1,

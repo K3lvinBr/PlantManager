@@ -1,6 +1,6 @@
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import React, { useState } from 'react'
-import axios from 'axios'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // components
 import Place from '../components/Place'
@@ -17,14 +17,22 @@ import colors from '../styles/colors'
 export default function New({ navigation }) {
   const [newPlant, setNewPlant] = useState(DefaultNewPlant.newPlant)
 
-  const handleCreatePlant = () => {
+  const handleCreatePlant = async () => {
     if (newPlant.place && newPlant.name && newPlant.image != null && newPlant.time) {
-      axios.post('http://192.168.0.197:3000/register', {
-        place: newPlant.place,
-        name: newPlant.name,
-        image: newPlant.image,
-        time: newPlant.time,
-      }).then(() => {
+      try {
+        const jsonValue = {
+          id: Math.random().toString(16).slice(2),
+          place: newPlant.place,
+          name: newPlant.name,
+          image: newPlant.image,
+          time: newPlant.time,
+        }
+        const dataItems = JSON.parse(await AsyncStorage.getItem('@storage_Key'))
+        if(dataItems === null) {
+          await AsyncStorage.setItem('@storage_Key', JSON.stringify([jsonValue]))
+        } else {
+          await AsyncStorage.setItem('@storage_Key', JSON.stringify([...dataItems, jsonValue]))
+        }
         setNewPlant({
           id: null,
           place: '',
@@ -32,21 +40,26 @@ export default function New({ navigation }) {
           image: null,
           time: ''
         })
-        navigation.navigate('home')
-      })
+        navigation.goBack()
+      } catch (e) {
+        console.log('error ao armazenar dados')
+      }
     }
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.background }}>
-      <PlantContext.Provider value={{ newPlant, setNewPlant }}>
+    <PlantContext.Provider value={{ newPlant, setNewPlant }}>
+      <ScrollView
+        style={{ flex: 1, backgroundColor: colors.background }}
+        contentContainerStyle={{ paddingBottom: 100 }}
+        showsVerticalScrollIndicator={false}>
         <Place />
         <ChoosePlant />
         <Time />
         <View style={{ paddingHorizontal: 30 }}>
           <Button onPress={() => { handleCreatePlant() }} styleButton={{ height: 56 }} textButton='Cadastrar planta' />
         </View>
-      </PlantContext.Provider>
-    </View >
+      </ScrollView >
+    </PlantContext.Provider>
   )
 }
