@@ -14,7 +14,7 @@ App para ajudar a regar suas plantas no tempo certo.
 </p>
 
 ## :page_facing_up: Projeto
-App para ajudar a regar suas plantas no tempo certo. Que foi utilizado React Native com TypeScript, Expo e React Navigation com a navegação bottom-tabs. Para armazenar as plantas criadas foi utilizado o MySQL com Node.js e Express.
+App para ajudar a regar suas plantas no tempo certo. Que foi utilizado React Native com TypeScript, Expo e React Navigation com a navegação bottom-tabs. Para armazenar as plantas criadas foi utilizado o Async Storage.
 
 ## :art: Layout
 <div align="center">
@@ -30,9 +30,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias
 - [React Navigation](https://reactnavigation.org)
 - [TypeScript](https://www.typescriptlang.org)
 - [Expo](https://expo.dev)
-- [Node.js](https://nodejs.org/en/)
-- [Express](https://expressjs.com)
-- [MySQL](https://www.mysql.com)
+- [Async Storage](https://react-native-async-storage.github.io/async-storage/)
 
 ## :computer: Como executar
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
