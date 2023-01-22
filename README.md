@@ -36,7 +36,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias
 
 ## :computer: Como executar
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [Expo](https://expo.dev), [MySQL](https://www.mysql.com), Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [Expo](https://expo.dev), Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 ```bash
 # Clone este repositório.
@@ -45,19 +45,15 @@ $ git clone https://github.com/K3lvinBr/PlantManager.git
 # Acesse a pasta do projeto no terminal/cmd
 $ cd PlantManager
 
-# Instale as dependências em cada pasta
-cd plant_manager, cd services
+# Instale as dependências na pasta plant_manager
+cd plant_manager
 $ npm install
 
 # Execute a aplicação
 cd plant_manager
 $ expo start
 
-cd services
-$ node index.js
-
 # Baixe o Expo Go no seu dispositivo para Android ou IOS
-# O servidor iniciará na porta:3000 - acesse http://localhost:3000
 ```
 
 ---
