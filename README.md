@@ -14,7 +14,7 @@ App para ajudar a regar suas plantas no tempo certo.
 </p>
 
 ## :page_facing_up: Projeto
-App para ajudar a regar suas plantas no tempo certo. Que foi utilizado React Native com TypeScript, Expo e React Navigation com a navegação bottom-tabs. Para armazenar as plantas criadas foi utilizado o Async Storage utilizado para armazenar dados persistentes no dispositivo.
+App para ajudar a regar suas plantas no tempo certo. Que foi utilizado React Native com TypeScript, Expo e React Navigation com a navegação bottom-tabs. Para armazenar as plantas criadas foi utilizado o Async Storage que armazena dados persistentes no dispositivo.
 
 ## :art: Layout
 <div align="center">
